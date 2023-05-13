@@ -1476,7 +1476,7 @@ class Highlight(Story):
             data = self._context.get_iphone_json(
                 path='api/v1/feed/reels_media/?reel_ids=highlight:{}'.format(self.unique_id), params={}
             )
-            self._iphone_struct_ = data['reels']['highlight:{}'.format(self.unique_id)]
+            self._iphone_struct_ = data['reels'].get('highlight:{}'.format(self.unique_id))
 
     @property
     def itemcount(self) -> int:
